@@ -41,7 +41,7 @@ spec:
     stage('Build Docker') {
       steps {
         bat 'docker build -t ubuntu:latest .'
-        bat 'docker run -td --name ubuntu_custom my-custom-image:0.1'
+        bat 'docker run -td --name ubuntu_custom ubuntu:latest'
       }
     } 
   }
