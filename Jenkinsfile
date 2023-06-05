@@ -13,7 +13,7 @@ pipeline {
     REPO = "smoltzvi/custom-dockerbuild "
   }
  agent {
-  docker { image 'ubuntu:22.04' }
+  docker { image 'node:18.16.0-alpine' }
  }
 
  stages {
