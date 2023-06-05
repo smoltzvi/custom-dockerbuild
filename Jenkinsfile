@@ -12,8 +12,10 @@ pipeline {
     JENKINS_CRED = "${PROJECT}"
     REPO = "smoltzvi/custom-dockerbuild "
   }
- agent any
- 
+ agent {
+  docker { image 'ubuntu:22.04' }
+ }
+
  stages {
     //  Run docker to build image
     stage('Build Docker') {
