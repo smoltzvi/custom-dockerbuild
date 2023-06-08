@@ -25,6 +25,12 @@ spec:
   # Use service account that can deploy to all namespaces
   serviceAccountName: cd-jenkins
   containers:
+   - name: kubectl
+    image: dtzar/helm-kubectl:3.11
+    imagePullPolicy: IfNotPresent
+    command:
+    - cat
+    tty: true
   - name:  kaniko
     image: gcr.io/kaniko-project/executor:v1.6.0-debug
     imagePullPolicy: Always
