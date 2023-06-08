@@ -49,8 +49,7 @@ spec:
       container('kaniko') {
         dir("custom-dockerbuild") {
           sh "/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --insecure --skip-tls-verify --cache=true --destination=gcr.io/${PROJECT}/${APP_NAME}:${release_version}"
-        }
-         
+        }   
       }
     } 
   }
